@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <link href="styleSheet.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Adam Website</title>
+  </head>
+  <body>
+    <h1>All-time Home Run Record</h1>
+    <h3>Welcome! Today's date is:</h3>
+    <p id="date"></p>
+    <div>
+      <form onsubmit="submitForm()"  action="javascript:void(0)" method="get">
+        <fieldset>
+          <legend>Login</legend>
+          <label>Username</label>
+          <input type="text" placeholder="Your email..." id="username">
+          <label>Password</label>
+          <input placeholder="Your Password..." type="password" id="password">
+          <div class="error-message">
+          </div>
+          <button type="submit" value="Submit" id="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      var d = new Date();
+      var month = d.getMonth()+1;
+      var date = d.getDate();
+      var year = d.getFullYear();
+      $('#date').html(`${month}/${date}/${year}`);
+      function submitForm () {
+        console.log('submitting');
+        axios.post('/login', {
+          username: $('#username').val(),
+          password: $('#password').val()
+        }).then(function () {
+          console.log('success');
+          window.location.href='/welcomeUserPage';
+        }).catch(function () {
+          $('.error-message').text('ERROR! try again');
+        })
+      }
+    </script>
+  </body>
+</html>

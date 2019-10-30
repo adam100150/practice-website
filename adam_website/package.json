@@ -1,0 +1,17 @@
+{
+  "name": "adam-website",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "server app.js",
+    "watch": "nodemon app.js"
+  },
+  "dependencies": {
+    "blueimp-file-upload": "^10.2.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.5",
+    "express-swagger-generator": "^1.1.15",
+    "nodemon": "^1.19.2"
+  }
+}

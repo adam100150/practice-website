@@ -1,0 +1,68 @@
+h1 {
+        text-align: center;
+        font-size: 12pt;
+        color: white;
+        margin-bottom: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+  }
+
+body {
+  background: #5DBCD2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+fieldset {
+  padding: 40px;
+  width: 20%;
+  border-radius: 10px;
+  background-color: #F0EEEE;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+}
+
+#welcomeuser {
+  margin-top: 200px;
+}
+
+#uploadFileForm {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#uploadFileText {
+  text: white;
+}
+
+label {
+  display: block;
+}
+
+button:hover {
+  background-color: white;
+  color: #4CAF50;
+}

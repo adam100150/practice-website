@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="styleSheet.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="utf-8">
+    <title>Adam Website</title>
+  </head>
+  <body>
+    <h3>Welcome user: </h3>
+    <p id="user"></p>
+    <div id="error-message"></div>
+    <h1 id="uploadFileText">Upload your home run record</h1>
+    <form onsubmit="submitForm()" id="uploadFileForm" action="javascript:void(0)" method="get">
+      <label for="uploadFileButton">Upload your home run recoed</label>
+      <input type="file" id="fileupload">
+      <button type="submit" value="Submit" id="submit">Submit</button>
+    </form>
+    <script type="text/javascript">
+    axios.get('/user/info', {
+    }).then( function(response) {
+      $('#user').text(response.data.username);
+    }).catch( function() {
+      $('#error-message').text('Error try again');
+    });
+    function submitForm() {
+      axios.post('/upload', {
+      });
+    }
+    </script>
+  </body>
+</html>
